@@ -18,10 +18,10 @@ Q.2) What is the most important thing in Data Science?
 
 Q.3) If the goal of a study was to relate Martha Stewart Living Subscribers to Our Site's Users based on the number of people that lived in each region of the US, what would be the potential problem?
 
-    a) There would be confounding because the number of people that live in an area is related to both Martha Stewart Living       Subscribers and Our Site's Users. (RIGHT)
+    a) There would be confounding because the number of people that live in an area is related to both Martha Stewart Living Subscribers and Our Site's Users. (RIGHT)
     b) We would be performing inference on the relationship between Martha Stewart Living Subscribers and Our Site's Users.
     c) We wouldn't be able to estimate the variability in Martha Stewart Living Subscribers.
-    d) We couldn't be sure whether subscribing to Martha Steward Living causes people to be Users of Our Site or the other          way around. 
+    d) We couldn't be sure whether subscribing to Martha Steward Living causes people to be Users of Our Site or the other way around. 
 
 Q.4) What is an experimental design tool that can be used to address variables that may be confounders at the design phase of an experiment?
 
