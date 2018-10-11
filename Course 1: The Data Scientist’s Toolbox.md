@@ -82,7 +82,7 @@
         * Nine courses
         * Goes from raw data to data products
 
-    * ## Data Science Specialization
+    * ## Data Science Specialization (Correct answer)
         * Uses R
         * Nine courses
         * Goes from raw data to data products
