@@ -1,9 +1,11 @@
+Practice Programming Assignment: swirl Lesson 1: Basic Building Blocks
+
 In this lesson, we will explore some basic building blocks of the R programming
 | language.
 
 ...
 
-  |==                                                                    |   3%
+|==                                                                    |   3%
 | If at any point you'd like more information on a particular topic related to R,
 | you can type help.start() at the prompt, which will open a menu of resources
 | (either within RStudio or your default web browser, depending on your setup).
