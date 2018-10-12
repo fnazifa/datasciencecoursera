@@ -1,7 +1,5 @@
-________________________________________________________________________
-|                                                                       |
-|Practice Programming Assignment: Swirl Lesson 5: Missing Values        |
-|_______________________________________________________________________|
+## Practice Programming Assignment: Swirl Lesson 5: Missing Values
+
 
 | Missing values play an important role in statistics and data analysis. Often, missing
 | values must not be ignored, but rather they should be carefully studied to see if there's
