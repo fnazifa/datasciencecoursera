@@ -1,19 +1,4 @@
-Selection: 1
-
-| Please choose a lesson, or type 0 to return to course menu.
-
- 1: Basic Building Blocks      2: Workspace and Files        3: Sequences of Numbers       4: Vectors                    5: Missing Values          
- 6: Subsetting Vectors         7: Matrices and Data Frames   8: Logic                      9: Functions                 10: lapply and sapply       
-11: vapply and tapply         12: Looking at Data           13: Simulation                14: Dates and Times           15: Base Graphics           
-
-
-Selection: 10
-
-
-  |                                                                                                                                                                   
-  |                                                                                                                                                             |   0%
-
-| In this lesson, you'll learn how to use lapply() and sapply(), the two most important members of R's *apply family of functions, also known as loop functions.
+In this lesson, you'll learn how to use lapply() and sapply(), the two most important members of R's *apply family of functions, also known as loop functions.
 
 ...
 
@@ -1156,65 +1141,5 @@ Levels: black blue gold green orange red white
 $botright
 [1] red
 Levels: black blue brown gold green orange red white
-
-
-| That's a job well done!
-
-
-  |                                                                                                                                                                   
-  |=======================================================================================================================================================      |  96%
-| The only difference between previous examples and this one is that we are defining and using our own function right in the call to lapply(). Our function has no
-| name and disappears as soon as lapply() is done using it. So-called 'anonymous functions' can be very useful when one of R's built-in functions isn't an option.
-
-...
-
-
-  |                                                                                                                                                                   
-  |==========================================================================================================================================================   |  98%
-| In this lesson, you learned how to use the powerful lapply() and sapply() functions to apply an operation over the elements of a list. In the next lesson, we'll
-| take a look at some close relatives of lapply() and sapply().
-
-...
-
-
-  |                                                                                                                                                                   
-  |=============================================================================================================================================================| 100%
-| Would you like to receive credit for completing this course on Coursera.org?
-
-1: No
-2: Yes
-
-Selection: 2
-What is your email address? fnazifa@gmail.com
-What is your assignment token? ybAAbMdM2ZgbgttK
-Grade submission failed.
-Press ESC if you want to exit this lesson and you
-want to try to submit your grade at a later time.
-
-| Not quite! Try again.
-
-| 
-
-1: Yes
-2: No
-
-Selection: 1
-What is your email address? fnazifa@gmail.com
-What is your assignment token? 571j9bKdypaU07Zv
-Grade submission failed.
-Press ESC if you want to exit this lesson and you
-want to try to submit your grade at a later time.
-
-| Keep trying!
-
-| 
-
-1: Yes
-2: No
-
-Selection: 1
-What is your email address? fnazifa@gmail.com
-What is your assignment token? awnqZtobsefGiBK5
-Grade submission failed.
-Press ESC if you want to exit this lesson and you
-want to try to submit your grade at a later time.
+                                                                                                                                                                                 
+  
