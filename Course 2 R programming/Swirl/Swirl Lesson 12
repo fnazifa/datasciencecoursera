@@ -1,0 +1,191 @@
+This lesson will teach you how to answer these questions and more using R's built-in functions. We'll be using a dataset constructed from the United States Department of Agriculture's PLANTS Database (http://plants.usda.gov/adv_search.html).
+
+I've stored the data for you in a variable called plants. Type ls() to list the variables in your workspace, among which should be plants.
+
+> ls()
+ [1] "B"               "B1"              "c"               "cachemean"      
+ [5] "cacheSolve"      "e"               "inv"             "inv0"           
+ [9] "inv1"            "invo"            "m"               "makeCacheMatrix"
+[13] "makeVector"      "mat"             "plants"          "RI1"            
+[17] "RI2"             "RI3"             "t0"              "t1"             
+[21] "x"               "y"              
+
+Let's begin by checking the class of the plants variable with class(plants). This will give us a clue as to the overall structure of the data.
+
+> class(plants)
+[1] "data.frame"
+
+Use dim(plants) to see exactly how many rows and columns we're dealing with.
+
+> dim(plants)
+[1] 5166   10
+
+You can also use nrow(plants) to see only the number of rows. Try it out.
+
+> nrow(plants)
+[1] 5166
+
+... And ncol(plants) to see only the number of columns.
+
+> ncol(plants)
+[1] 10
+
+If you are curious as to how much space the dataset is occupying in memory, you can use object.size(plants).
+
+> object.size(plants)
+686080 bytes
+
+Now that we have a sense of the shape and size of the dataset, let's get a feel for what's inside. names(plants) will return a character vector of column (i.e. variable) names. Give it a shot.
+
+> names(plants)
+ [1] "Scientific_Name"      "Duration"             "Active_Growth_Period"
+ [4] "Foliage_Color"        "pH_Min"               "pH_Max"              
+ [7] "Precip_Min"           "Precip_Max"           "Shade_Tolerance"     
+[10] "Temp_Min_F"          
+
+The head() function allows you to preview the top of the dataset. Give it a try with only one argument.
+
+> head(plants)
+               Scientific_Name          Duration Active_Growth_Period Foliage_Color
+1                  Abelmoschus              <NA>                 <NA>          <NA>
+2       Abelmoschus esculentus Annual, Perennial                 <NA>          <NA>
+3                        Abies              <NA>                 <NA>          <NA>
+4               Abies balsamea         Perennial    Spring and Summer         Green
+5 Abies balsamea var. balsamea         Perennial                 <NA>          <NA>
+6                     Abutilon              <NA>                 <NA>          <NA>
+  pH_Min pH_Max Precip_Min Precip_Max Shade_Tolerance Temp_Min_F
+1     NA     NA         NA         NA            <NA>         NA
+2     NA     NA         NA         NA            <NA>         NA
+3     NA     NA         NA         NA            <NA>         NA
+4      4      6         13         60        Tolerant        -43
+5     NA     NA         NA         NA            <NA>         NA
+6     NA     NA         NA         NA            <NA>         NA
+
+By default, head() shows you the first six rows of the data. You can alter this behavior by passing as a second argument the number of rows you'd like to view. Use head() to preview the first 10 rows of plants.
+
+> head(plants, 10)
+                     Scientific_Name          Duration Active_Growth_Period
+1                        Abelmoschus              <NA>                 <NA>
+2             Abelmoschus esculentus Annual, Perennial                 <NA>
+3                              Abies              <NA>                 <NA>
+4                     Abies balsamea         Perennial    Spring and Summer
+5       Abies balsamea var. balsamea         Perennial                 <NA>
+6                           Abutilon              <NA>                 <NA>
+7               Abutilon theophrasti            Annual                 <NA>
+8                             Acacia              <NA>                 <NA>
+9                  Acacia constricta         Perennial    Spring and Summer
+10 Acacia constricta var. constricta         Perennial                 <NA>
+   Foliage_Color pH_Min pH_Max Precip_Min Precip_Max Shade_Tolerance Temp_Min_F
+1           <NA>     NA     NA         NA         NA            <NA>         NA
+2           <NA>     NA     NA         NA         NA            <NA>         NA
+3           <NA>     NA     NA         NA         NA            <NA>         NA
+4          Green      4    6.0         13         60        Tolerant        -43
+5           <NA>     NA     NA         NA         NA            <NA>         NA
+6           <NA>     NA     NA         NA         NA            <NA>         NA
+7           <NA>     NA     NA         NA         NA            <NA>         NA
+8           <NA>     NA     NA         NA         NA            <NA>         NA
+9          Green      7    8.5          4         20      Intolerant        -13
+10          <NA>     NA     NA         NA         NA            <NA>         NA
+
+The same applies for using tail() to preview the end of the dataset. Use tail() to view the last 15 rows.
+
+> tail(plants, 15)
+                      Scientific_Name  Duration Active_Growth_Period Foliage_Color
+5152                          Zizania      <NA>                 <NA>          <NA>
+5153                 Zizania aquatica    Annual               Spring         Green
+5154   Zizania aquatica var. aquatica    Annual                 <NA>          <NA>
+5155                Zizania palustris    Annual                 <NA>          <NA>
+5156 Zizania palustris var. palustris    Annual                 <NA>          <NA>
+5157                      Zizaniopsis      <NA>                 <NA>          <NA>
+5158             Zizaniopsis miliacea Perennial    Spring and Summer         Green
+5159                            Zizia      <NA>                 <NA>          <NA>
+5160                     Zizia aptera Perennial                 <NA>          <NA>
+5161                      Zizia aurea Perennial                 <NA>          <NA>
+5162                 Zizia trifoliata Perennial                 <NA>          <NA>
+5163                          Zostera      <NA>                 <NA>          <NA>
+5164                   Zostera marina Perennial                 <NA>          <NA>
+5165                           Zoysia      <NA>                 <NA>          <NA>
+5166                  Zoysia japonica Perennial                 <NA>          <NA>
+     pH_Min pH_Max Precip_Min Precip_Max Shade_Tolerance Temp_Min_F
+5152     NA     NA         NA         NA            <NA>         NA
+5153    6.4    7.4         30         50      Intolerant         32
+5154     NA     NA         NA         NA            <NA>         NA
+5155     NA     NA         NA         NA            <NA>         NA
+5156     NA     NA         NA         NA            <NA>         NA
+5157     NA     NA         NA         NA            <NA>         NA
+5158    4.3    9.0         35         70      Intolerant         12
+5159     NA     NA         NA         NA            <NA>         NA
+5160     NA     NA         NA         NA            <NA>         NA
+5161     NA     NA         NA         NA            <NA>         NA
+5162     NA     NA         NA         NA            <NA>         NA
+5163     NA     NA         NA         NA            <NA>         NA
+5164     NA     NA         NA         NA            <NA>         NA
+5165     NA     NA         NA         NA            <NA>         NA
+5166     NA     NA         NA         NA            <NA>         NA
+
+After previewing the top and bottom of the data, you probably noticed lots of NAs, which are R's placeholders for missing values. Use summary(plants) to get a better feel for how each variable is distributed and how much of the dataset is missing.
+
+> summary(plants)
+                     Scientific_Name              Duration   
+ Abelmoschus                 :   1   Perennial        :3031  
+ Abelmoschus esculentus      :   1   Annual           : 682  
+ Abies                       :   1   Annual, Perennial: 179  
+ Abies balsamea              :   1   Annual, Biennial :  95  
+ Abies balsamea var. balsamea:   1   Biennial         :  57  
+ Abutilon                    :   1   (Other)          :  92  
+ (Other)                     :5160   NA's             :1030  
+           Active_Growth_Period      Foliage_Color      pH_Min          pH_Max      
+ Spring and Summer   : 447      Dark Green  :  82   Min.   :3.000   Min.   : 5.100  
+ Spring              : 144      Gray-Green  :  25   1st Qu.:4.500   1st Qu.: 7.000  
+ Spring, Summer, Fall:  95      Green       : 692   Median :5.000   Median : 7.300  
+ Summer              :  92      Red         :   4   Mean   :4.997   Mean   : 7.344  
+ Summer and Fall     :  24      White-Gray  :   9   3rd Qu.:5.500   3rd Qu.: 7.800  
+ (Other)             :  30      Yellow-Green:  20   Max.   :7.000   Max.   :10.000  
+ NA's                :4334      NA's        :4334   NA's   :4327    NA's   :4327    
+   Precip_Min      Precip_Max         Shade_Tolerance   Temp_Min_F    
+ Min.   : 4.00   Min.   : 16.00   Intermediate: 242   Min.   :-79.00  
+ 1st Qu.:16.75   1st Qu.: 55.00   Intolerant  : 349   1st Qu.:-38.00  
+ Median :28.00   Median : 60.00   Tolerant    : 246   Median :-33.00  
+ Mean   :25.57   Mean   : 58.73   NA's        :4329   Mean   :-22.53  
+ 3rd Qu.:32.00   3rd Qu.: 60.00                       3rd Qu.:-18.00  
+ Max.   :60.00   Max.   :200.00                       Max.   : 52.00  
+ NA's   :4338    NA's   :4338                         NA's   :4328    
+
+summary() provides different output for each variable, depending on its class. For numeric data such as Precip_Min, summary() displays the minimum, 1st quartile, median, mean, 3rd quartile, and maximum. These values help us understand how the data are distributed.
+
+For categorical variables (called 'factor' variables in R), summary() displays the number of times each value (or 'level') occurs in the data. For example, each value of Scientific_Name only appears once, since it is unique to a specific plant. 
+In contrast, the summary for Duration (also a factor variable) tells us that our dataset contains 3031 Perennial plants, 682 Annual plants, etc.
+
+You can see that R truncated the summary for Active_Growth_Period by including a catch-all category called 'Other'. Since it is a categorical/factor variable, we can see how many times each value actually occurs in the data with table(plants$Active_Growth_Period).
+
+> table(plants$Active_Growth_Period)
+
+Fall, Winter and Spring                  Spring         Spring and Fall 
+                     15                     144                      10 
+      Spring and Summer    Spring, Summer, Fall                  Summer 
+                    447                      95                      92 
+        Summer and Fall              Year Round 
+                     24                       5 
+
+Each of the functions we've introduced so far has its place in helping you to better understand the structure of your data. However, we've left the best for last....
+
+Perhaps the most useful and concise function for understanding the *str*ucture of your data is str(). Give it a try now.
+
+> str(plants)
+'data.frame':	5166 obs. of  10 variables:
+ $ Scientific_Name     : Factor w/ 5166 levels "Abelmoschus",..: 1 2 3 4 5 6 7 8 9 10 ...
+ $ Duration            : Factor w/ 8 levels "Annual","Annual, Biennial",..: NA 4 NA 7 7 NA 1 NA 7 7 ...
+ $ Active_Growth_Period: Factor w/ 8 levels "Fall, Winter and Spring",..: NA NA NA 4 NA NA NA NA 4 NA ...
+ $ Foliage_Color       : Factor w/ 6 levels "Dark Green","Gray-Green",..: NA NA NA 3 NA NA NA NA 3 NA ...
+ $ pH_Min              : num  NA NA NA 4 NA NA NA NA 7 NA ...
+ $ pH_Max              : num  NA NA NA 6 NA NA NA NA 8.5 NA ...
+ $ Precip_Min          : int  NA NA NA 13 NA NA NA NA 4 NA ...
+ $ Precip_Max          : int  NA NA NA 60 NA NA NA NA 20 NA ...
+ $ Shade_Tolerance     : Factor w/ 3 levels "Intermediate",..: NA NA NA 3 NA NA NA NA 2 NA ...
+ $ Temp_Min_F          : int  NA NA NA -43 NA NA NA NA -13 NA ...
+
+
+The beauty of str() is that it combines many of the features of the other function you've already seen, all in a concise and readable format. At the very top, it tells us that the class of plants is 'data.frame' and that it has 5166 observations and 10 variables. It then gives us the name and class of each variable, as well as a preview of its contents.
+
+
+str() is actually a very general function that you can use on most objects in R. Any time you want to understand the structure of something (a dataset, function, etc.), str() is a good place to start.
